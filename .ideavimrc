@@ -1,0 +1,69 @@
+" base configuration
+set nu
+set relativenumber
+
+" keymaps
+
+" the leader key
+let mapleader=" "
+
+" the escape button
+map <C-c> <Esc>
+
+" terminal
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+" zen-mode
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+
+" find
+nnoremap <c-f> :action GotoFile<CR>
+nnoremap <c-r> :action RecentFiles<CR>
+
+" navigation
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+
+nnoremap ;q :action CloseContent<CR>
+nnoremap ;a :action CloseAllEditors<CR>
+
+" code interactions
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>f :action ReformatCode<CR>
+
+" code information
+nnoremap <leader>d :action ShowHoverInfo<CR>
+
+" code navigation
+nnoremap gi :action GotoImplementation<CR>
+
+" debugging
+nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>c :action Stop<CR>
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+
+"---------- plugins ----------
+" easy motion
+Plug 'easymotion/vim-easymotion'
+map <leader>J <Plug>(easymotion-s)
+map <leader>j <Plug>(easymotion-f)
+
+Plug 'preservim/nerdtree'
+map <c-n> :NERDTree<CR>
+":NERDTreeFocus
+":NERDTreeToggle
+":NERDTreeClose
+":NERDTreeFind
+":NERDTreeRefreshRoot
