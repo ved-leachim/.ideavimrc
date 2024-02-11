@@ -19,19 +19,17 @@ nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 
 " find
 nnoremap <c-f> :action GotoFile<CR>
-nnoremap <c-r> :action RecentFiles<CR>
+nnoremap <c-r> :ACTION RecentFiles<CR>
 
 " navigation
-nnoremap <c-\> :action SplitVertically<CR>
-nnoremap <c--> :action SplitHorizontally<CR>
-nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+nnoremap sv :action SplitVertically<CR>
+nnoremap ss :action SplitHorizontally<CR>
+nnoremap sm :action MoveEditorToOppositeTabGroup<CR>
 
-sethandler <c-j> a:vim
-sethandler <c-k> a:vim
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
+nnoremap sh <c-w>h
+nnoremap sl <c-w>l
+nnoremap sj <c-w>j
+nnoremap sk <c-w>k
 
 nnoremap <TAB> :action PreviousTab<CR>
 nnoremap <s-TAB> :action NextTab<CR>
@@ -45,14 +43,22 @@ nnoremap <leader>f :action ReformatCode<CR>
 
 " code information
 nnoremap <leader>d :action ShowHoverInfo<CR>
+nnoremap <leader>e :action ShowErrorDescription<CR>
 
 " code navigation
 nnoremap gi :action GotoImplementation<CR>
 
 " debugging
-nnoremap <leader>d :action Debug<CR>
-nnoremap <leader>c :action Stop<CR>
-nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dd :action Debug<CR>
+nnoremap <leader>ds :action Stop<CR>
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+
+" run
+nnoremap <leader>rc :action ContextRun<CR>
+nnoremap <leader>rx :action ChooseRunConfiguration<CR>
+nnoremap <leader>rr :action Rerun<CR>
+nnoremap <leader>rt :action RunTests<CR>
+nnoremap <leader>rs :action Stop<CR>
 
 "---------- plugins ----------
 " easy motion
