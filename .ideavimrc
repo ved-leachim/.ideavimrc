@@ -1,6 +1,11 @@
 " base configuration
+set showmode
+set incsearch
 set nu
 set relativenumber
+set ignorecase
+set smartcase
+set clipboard+=unnamed
 
 " keymaps
 
@@ -40,6 +45,7 @@ nnoremap ;a :action CloseAllEditors<CR>
 " code interactions
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>re :action Refactorings.QuickListPopupAction<CR>
 
 " code information
 nnoremap <leader>d :action ShowHoverInfo<CR>
@@ -49,7 +55,7 @@ nnoremap <leader>e :action ShowErrorDescription<CR>
 nnoremap gi :action GotoImplementation<CR>
 
 " debugging
-nnoremap <leader>dd :action Debug<CR>
+nnoremap <leader>dc :action Debug<CR>
 nnoremap <leader>ds :action Stop<CR>
 nnoremap <leader>db :action ToggleLineBreakpoint<CR>
 
