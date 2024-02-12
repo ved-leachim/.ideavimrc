@@ -13,7 +13,10 @@ set clipboard+=unnamed
 let mapleader=" "
 
 " the escape button
-map <C-c> <Esc>
+nnoremap <C-c> <Esc>
+
+" comfort shortcuts
+nnoremap <c-d> yyp
 
 " terminal
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
@@ -54,6 +57,10 @@ nnoremap <leader>e :action ShowErrorDescription<CR>
 " code navigation
 nnoremap gi :action GotoImplementation<CR>
 
+" code selection
+nnoremap <s-j> :action MoveLineDown<CR>
+nnoremap <s-k> :action MoveLineUp<CR>
+
 " debugging
 nnoremap <leader>dc :action Debug<CR>
 nnoremap <leader>ds :action Stop<CR>
@@ -76,6 +83,6 @@ Plug 'preservim/nerdtree'
 map <c-n> :NERDTree<CR>
 ":NERDTreeFocus
 ":NERDTreeToggle
-":NERDTreeClose
+map <c-n>n :NERDTreeClose<CR>
 ":NERDTreeFind
 ":NERDTreeRefreshRoot
