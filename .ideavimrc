@@ -15,21 +15,27 @@ let mapleader=" "
 " the escape button
 nnoremap <C-c> <Esc>
 
+" redo
+nnoremap U <C-r>
+
 " comfort shortcuts
-nnoremap <c-d> yyp
+nnoremap <C-d> yyp
 
 " terminal
-nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
 " zen-mode
-nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
 
 " find
-nnoremap <c-f> :action GotoFile<CR>
-nnoremap <c-r> :ACTION RecentFiles<CR>
+nnoremap <C-f> :action GotoFile<CR>
+nnoremap <C-r> :action RecentFiles<CR>
 
 " navigation
+nnoremap J }
+nnoremap K {
+
 nnoremap sv :action SplitVertically<CR>
 nnoremap ss :action SplitHorizontally<CR>
 nnoremap sm :action MoveEditorToOppositeTabGroup<CR>
@@ -40,15 +46,20 @@ nnoremap sj <c-w>j
 nnoremap sk <c-w>k
 
 nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
+nnoremap <S-TAB> :action NextTab<CR>
 
 nnoremap ;q :action CloseContent<CR>
 nnoremap ;a :action CloseAllEditors<CR>
 
 " code interactions
+nnoremap <leader>c :action CommentByLineComment<CR>
+nnoremap <leader>C :action CommentByBlockComment<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>f :action ReformatCode<CR>
 nnoremap <leader>re :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>su :action ShowUsages<CR>
+nnoremap <leader>sU :action FindUsages<CR>
+
 
 " code information
 nnoremap <leader>d :action ShowHoverInfo<CR>
@@ -58,8 +69,8 @@ nnoremap <leader>e :action ShowErrorDescription<CR>
 nnoremap gi :action GotoImplementation<CR>
 
 " code selection
-nnoremap <s-j> :action MoveLineDown<CR>
-nnoremap <s-k> :action MoveLineUp<CR>
+nnoremap <S-j> :action MoveLineDown<CR>
+nnoremap <S-k> :action MoveLineUp<CR>
 
 " debugging
 nnoremap <leader>dc :action Debug<CR>
