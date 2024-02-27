@@ -59,6 +59,10 @@ nnoremap <leader>f :action ReformatCode<CR>
 nnoremap <leader>re :action Refactorings.QuickListPopupAction<CR>
 nnoremap <leader>su :action ShowUsages<CR>
 nnoremap <leader>sU :action FindUsages<CR>
+nnoremap <leader>m  :action CollapseRegion<CR>
+nnoremap <leader>M  :action ExpandRegion<CR>
+nnoremap <leader>am :action CollapseAllRegions<CR>
+nnoremap <leader>aM :action ExpandAllRegions<CR>
 
 
 " code information
