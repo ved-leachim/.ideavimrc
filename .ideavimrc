@@ -25,6 +25,9 @@ nnoremap <C-d> yyp
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
+" Important --> Close Current Buffer with CMD-4 or Control-4 on Windows
+" This allows to close for example the Debugger-Console Windows
+
 " zen-mode
 nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
 
@@ -63,7 +66,7 @@ nnoremap <leader>m  :action CollapseRegion<CR>
 nnoremap <leader>M  :action ExpandRegion<CR>
 nnoremap <leader>am :action CollapseAllRegions<CR>
 nnoremap <leader>aM :action ExpandAllRegions<CR>
-
+nnoremap <leader>oi :action OptimizeImports<CR>
 
 " code information
 nnoremap <leader>d :action ShowHoverInfo<CR>
