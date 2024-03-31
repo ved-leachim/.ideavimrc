@@ -12,14 +12,27 @@ set clipboard+=unnamed
 " the leader key
 let mapleader=" "
 
-" the escape button
-nnoremap <C-c> <Esc>
+" remaps
 
 " redo
 nnoremap U <C-r>
 
+" delete current char into black hole register
+nnoremap x "_x
+
+" delete previous char into black hole register
+nnoremap X "_X
+
 " comfort shortcuts
 nnoremap <C-d> yyp
+" move to first char in line
+nnoremap gf ^
+" move to last char in line
+nnoremap gl $
+" copy current line into clipboard (without newLine)
+nnoremap <C-c> ^vg_y
+" delete current line without newLine and go into insert-mode
+nnoremap gdl ^vg_da
 
 " terminal
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
