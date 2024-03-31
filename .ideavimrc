@@ -88,9 +88,9 @@ nnoremap <leader>e :action ShowErrorDescription<CR>
 " code navigation
 nnoremap gi :action GotoImplementation<CR>
 
-" code selection
-nnoremap <S-j> :action MoveLineDown<CR>
-nnoremap <S-k> :action MoveLineUp<CR>
+" move line up or down
+nnoremap <C-j> :action MoveLineDown<CR>
+nnoremap <C-k> :action MoveLineUp<CR>
 
 " debugging
 nnoremap <leader>dc :action Debug<CR>
