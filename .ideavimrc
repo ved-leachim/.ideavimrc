@@ -23,6 +23,15 @@ nnoremap x "_x
 " delete previous char into black hole register
 nnoremap X "_X
 
+" delete rest of line into black hole register
+nnoremap D "_D
+
+" change rest of word into black hole register
+nnoremap cw "_cw
+
+" change word into black hole register
+nnoremap ciw "_ciw
+
 " comfort shortcuts
 nnoremap <C-d> yyp
 " move to first char in line
@@ -64,6 +73,16 @@ nnoremap sk <c-w>k
 nnoremap <TAB> :action PreviousTab<CR>
 nnoremap <S-TAB> :action NextTab<CR>
 
+nnoremap <leader>1 :action GoToTab1<CR>
+nnoremap <leader>2 :action GoToTab2<CR>
+nnoremap <leader>3 :action GoToTab3<CR>
+nnoremap <leader>4 :action GoToTab4<CR>
+nnoremap <leader>5 :action GoToTab5<CR>
+nnoremap <leader>6 :action GoToTab6<CR>
+nnoremap <leader>7 :action GoToTab7<CR>
+nnoremap <leader>8 :action GoToTab8<CR>
+nnoremap <leader>9 :action GoToTab9<CR>
+
 nnoremap ;q :action CloseContent<CR>
 nnoremap ;a :action CloseAllEditors<CR>
 
@@ -87,6 +106,10 @@ nnoremap <leader>e :action ShowErrorDescription<CR>
 
 " code navigation
 nnoremap gi :action GotoImplementation<CR>
+nnoremap gn :action GotoNextError<CR>
+nnoremap gp :action GotoPreviousError<CR>
+nnoremap gmu :action MethodUp<CR>
+nnoremap gmd :action MethodDown<CR>
 
 " move line up or down
 nnoremap <C-j> :action MoveLineDown<CR>
