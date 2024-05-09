@@ -10,8 +10,6 @@ set visualbell
 set scrolloff=5
 
 "IDE & vim
-set ideajoin
-set ideamarks
 set idearefactormode=normal
 set ideastatusicon=gray
 
@@ -43,16 +41,8 @@ nnoremap gf ^
 nnoremap gl $
 " copy current line into clipboard (without newLine)
 nnoremap <C-c> ^vg_y
-" delete current line without newLine and go into insert-mode
-nnoremap gdl ^vg_da
-" copy all in GotoFile
-nnoremap <C-a> ggVG"+y
-" copy word
-nnoremap ,c yiw
-" select word
-nnoremap ,v viw
-" surround current word with ()
-nnoremap <leader>sw viwxi ()<Esc>P
+" Select all
+nmap <C-a> gg<S-v>G
 
 " better escape
 imap jk <Esc>
@@ -107,11 +97,10 @@ nmap <leader>8 <Action>(GoToTab8)
 nmap <leader>9 <Action>(GoToTab9)
 
 nmap ;q <Action>(CloseContent)
-nmap ;a <Action>(CloseAllEditors)
 
 " code interactions
-nmap <leader>c <Action>(CommentByLineComment)
-nmap <leader>C <Action>(CommentByBlockComment)
+map <leader>c <Action>(CommentByLineComment)
+map <leader>C <Action>(CommentByBlockComment)
 nmap <leader>r <Action>(RenameElement)
 nmap <leader>f <Action>(ReformatCode)
 nmap <leader>rf <Action>(Refactorings.QuickListPopupAction)
@@ -128,6 +117,7 @@ nmap <leader>d <Action>(ShowHoverInfo)
 nmap <leader>e <Action>(ShowErrorDescription)
 
 " code navigation
+nmap gd <Action>(GotoDeclaration)
 nmap gi <Action>(GotoImplementation)
 nmap gn <Action>(GotoNextError)
 nmap gp <Action>(GotoPreviousError)
@@ -150,6 +140,9 @@ nmap <leader>rr <Action>(Rerun)
 nmap <leader>rt <Action>(RunTests)
 nmap <leader>rs <Action>(Stop)
 
+" configurations
+nmap \\v <Action>(VimActions)
+
 "---------- plugins ----------
 " easy motion
 Plug 'easymotion/vim-easymotion'
@@ -160,6 +153,6 @@ Plug 'preservim/nerdtree'
 map <c-n> :NERDTree<CR>
 ":NERDTreeFocus
 ":NERDTreeToggle
-map <c-n>n :NERDTreeClose<CR>
+map <c-q> :NERDTreeClose<CR>
 ":NERDTreeFind
 ":NERDTreeRefreshRoot
