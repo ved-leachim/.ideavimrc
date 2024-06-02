@@ -12,6 +12,7 @@ set scrolloff=5
 "IDE & vim
 set idearefactormode=normal
 set ideastatusicon=gray
+set easymotion
 
 " keymaps
 
@@ -25,14 +26,13 @@ nnoremap U <C-r>
 nnoremap x "_x
 " delete previous char into black hole register
 nnoremap X "_X
-" delete rest of line into black hole register
-nnoremap D "_D
-" cut-out rest of line
-nnoremap cD D
 " change rest of word into black hole register
 nnoremap cw "_cw
 " change word into black hole register
 nnoremap ciw "_ciw
+" use the last yank register for pasting
+xnoremap p "0p
+xnoremap P "0P
 " comfort shortcuts
 nnoremap <C-d> yyp
 " move to first char in line
@@ -48,13 +48,13 @@ nmap <C-a> gg<S-v>G
 imap jk <Esc>
 
 " surround marked text with ()
-xnoremap <leader>s xi ()<Esc>P
+xnoremap <leader>s xi()<Esc>P
 " surround marked text with []
-xnoremap <leader>s[ xi []<Esc>P
-xnoremap <leader>s] xi []<Esc>P
+xnoremap <leader>s[ xi[]<Esc>P
+xnoremap <leader>s] xi[]<Esc>P
 " surround marked text with {}
-xnoremap <leader>s{ xi {}<Esc>P
-xnoremap <leader>s} xi {}<Esc>P
+xnoremap <leader>s{ xi{}<Esc>P
+xnoremap <leader>s} xi{}<Esc>P
 
 " terminal
 nmap <C-t> <Action>(ActivateTerminalToolWindow)
@@ -134,11 +134,14 @@ nmap <leader>ds <Action>(Stop)
 nmap <leader>db <Action>(ToggleLineBreakpoint)
 
 " run
-nmap <leader>rc <Action>(ContextRun)
+nmap <leader>rc <Action>(Run)
 nmap <leader>rx <Action>(ChooseRunConfiguration)
 nmap <leader>rr <Action>(Rerun)
 nmap <leader>rt <Action>(RunTests)
 nmap <leader>rs <Action>(Stop)
+
+" todo
+nmap <leader>to <Action>(ActivateTODOToolWindow)
 
 " configurations
 nmap \\v <Action>(VimActions)
