@@ -30,9 +30,10 @@ nnoremap X "_X
 nnoremap cw "_cw
 " change word into black hole register
 nnoremap ciw "_ciw
-" use the last yank register for pasting
-xnoremap p "0p
-xnoremap P "0P
+" select line into black hole register
+nnoremap V "_V
+" select into black hole register
+nnoremap v "_v
 " comfort shortcuts
 nnoremap <C-d> yyp
 " move to first char in line
@@ -69,6 +70,7 @@ nmap <C-z> <Action>(ToggleDistractionFreeMode)
 " find
 nmap <C-f> <Action>(GotoFile)
 nmap <C-r> <Action>(RecentFiles)
+nmap <C-c> <Action>(GotoClass)
 
 " navigation
 map J }
@@ -103,7 +105,7 @@ map <leader>c <Action>(CommentByLineComment)
 map <leader>C <Action>(CommentByBlockComment)
 nmap <leader>r <Action>(RenameElement)
 nmap <leader>f <Action>(ReformatCode)
-nmap <leader>rf <Action>(Refactorings.QuickListPopupAction)
+xmap <leader>rf <Action>(Refactorings.QuickListPopupAction)
 nmap <leader>su <Action>(ShowUsages)
 nmap <leader>sU <Action>(FindUsages)
 nmap <leader>m  <Action>(CollapseRegion)
@@ -119,8 +121,10 @@ nmap <leader>e <Action>(ShowErrorDescription)
 " code navigation
 nmap gd <Action>(GotoDeclaration)
 nmap gi <Action>(GotoImplementation)
-nmap gn <Action>(GotoNextError)
-nmap gp <Action>(GotoPreviousError)
+nmap gp <Action>(JumpToLastChange)
+nmap gn <Action>(JumpToNextChange)
+nmap gne <Action>(GotoNextError)
+nmap gpe <Action>(GotoPreviousError)
 nmap gmu <Action>(MethodUp)
 nmap gmd <Action>(MethodDown)
 
