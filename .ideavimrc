@@ -30,16 +30,14 @@ nnoremap X "_X
 nnoremap cw "_cw
 " change word into black hole register
 nnoremap ciw "_ciw
-" select line into black hole register
-nnoremap V "_V
-" select into black hole register
-nnoremap v "_v
 " comfort shortcuts
 nnoremap <C-d> yyp
 " move to first char in line
 nnoremap gf ^
 " move to last char in line
 nnoremap gl $
+" goto closing/opening bracket pair
+nnoremap gb %
 " copy current line into clipboard (without newLine)
 nnoremap <C-c> ^vg_y
 " Select all
@@ -123,6 +121,7 @@ nmap gd <Action>(GotoDeclaration)
 nmap gi <Action>(GotoImplementation)
 nmap gp <Action>(JumpToLastChange)
 nmap gn <Action>(JumpToNextChange)
+nmap gt <Action>(GotoTest)
 nmap gne <Action>(GotoNextError)
 nmap gpe <Action>(GotoPreviousError)
 nmap gmu <Action>(MethodUp)
@@ -141,8 +140,8 @@ nmap <leader>db <Action>(ToggleLineBreakpoint)
 nmap <leader>rc <Action>(Run)
 nmap <leader>rx <Action>(ChooseRunConfiguration)
 nmap <leader>rr <Action>(Rerun)
-nmap <leader>rt <Action>(RunTests)
 nmap <leader>rs <Action>(Stop)
+nmap <leader>rt <Action>(RunTests)
 
 " todo
 nmap <leader>to <Action>(ActivateTODOToolWindow)
